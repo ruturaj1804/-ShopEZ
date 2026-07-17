@@ -19,12 +19,12 @@
       "dest": "Server/index.js"
     },
     {
-      "src": "/uploads/(.*)",
-      "dest": "Server/index.js"
+      "src": "/assets/(.*)",
+      "dest": "Client/dist/assets/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "Client/dist/$1"
+      "dest": "Client/dist/index.html"
     }
   ]
 }
