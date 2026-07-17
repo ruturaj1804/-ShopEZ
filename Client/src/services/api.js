@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:8000/api',
+  baseURL: import.meta.env.MODE === 'development'
+    ? 'http://localhost:8000/api'
+    : '/api',
 });
 
 // Add token to requests
