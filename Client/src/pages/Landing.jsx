@@ -45,7 +45,19 @@ export default function Landing() {
           <div className="categories-grid">
             {settings.categories.map((cat, idx) => (
               <Link key={idx} to={`/products?category=${cat.name}`} className="category-card">
-                {cat.image && <img src={cat.image} alt={cat.name} />}
+                {cat.image ? (
+                  <img
+                    src={cat.image}
+                    alt={cat.name}
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                      e.currentTarget.nextElementSibling?.classList.add('show');
+                    }}
+                  />
+                ) : null}
+                <span className={`category-fallback${cat.image ? '' : ' show'}`} aria-hidden="true">
+                  {cat.name.charAt(0)}
+                </span>
                 <span>{cat.name}</span>
               </Link>
             ))}

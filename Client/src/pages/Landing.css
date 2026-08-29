@@ -75,6 +75,25 @@
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 10px;
+  background: #dce6f5;
+}
+
+.category-fallback {
+  display: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+  background: #2d6cdf;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.category-fallback.show {
+  display: flex;
 }
 
 .featured-section {

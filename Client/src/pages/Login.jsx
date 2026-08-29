@@ -18,9 +18,9 @@ export default function Login() {
       const data = await login(email, password);
       if (data.success) {
         toast.success('Login successful!');
-        navigate('/');
+        navigate(data.data?.role === 'admin' ? '/admin/sell' : '/');
       } else {
-        toast.error(data.message);
+        toast.error(data.message || 'Login failed');
       }
     } catch (err) {
       toast.error(err.response?.data?.message || 'Login failed');
@@ -41,7 +41,8 @@ export default function Login() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
+              placeholder="admin@shopez.com"
+              autoComplete="email"
               required
             />
           </div>

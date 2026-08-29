@@ -6,11 +6,15 @@ const API = axios.create({
     : '/api',
 });
 
-// Add token to requests
 API.interceptors.request.use((config) => {
-  const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-  if (userInfo?.token) {
-    config.headers.Authorization = `Bearer ${userInfo.token}`;
+  try {
+    const raw = localStorage.getItem('userInfo');
+    const userInfo = raw ? JSON.parse(raw) : null;
+    if (userInfo?.token) {
+      config.headers.Authorization = `Bearer ${userInfo.token}`;
+    }
+  } catch {
+    localStorage.removeItem('userInfo');
   }
   return config;
 });
