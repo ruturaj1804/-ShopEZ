@@ -2,7 +2,7 @@
   "name": "shopez-server",
   "version": "1.0.0",
   "description": "ShopEZ E-commerce Backend",
-  "author": "ruturaj",
+  "author": "Ruturaj Misal",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

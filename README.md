@@ -1,5 +1,7 @@
 # ShopEZ
 
+> **Author & Developer:** Ruturaj Misal ([@ruturaj1804](https://github.com/ruturaj1804))
+
 ShopEZ is a full-featured e-commerce web application built with the MERN stack (MongoDB, Express.js, React, Node.js). It provides a seamless shopping experience for users and a powerful seller dashboard for admins to manage products, track orders, and analyze sales.
 
 ## Features
